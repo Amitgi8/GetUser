@@ -1,11 +1,35 @@
-import React from 'react'
+import React from 'react';
 
-const ShowUser = () => {
+const ShowUser = ({ users }) => {
   return (
-    <div>
-      
+    <div className="p-6">
+      <h1 className='text-5xl font-bold mb-6'>Show User</h1>
+      <table className="min-w-full bg-white border border-gray-300">
+        <thead>
+          <tr className="bg-gray-100 text-left">
+            <th className="py-2 px-4 border-b">Title</th>
+            <th className="py-2 px-4 border-b">First Name</th>
+            <th className="py-2 px-4 border-b">Middle Name</th>
+            <th className="py-2 px-4 border-b">Last Name</th>
+            <th className="py-2 px-4 border-b">Email</th>
+            <th className="py-2 px-4 border-b">Phone Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((user, index) => (
+            <tr key={index} className="hover:bg-gray-50">
+              <td className="py-2 px-4 border-b">{user.title}</td>
+              <td className="py-2 px-4 border-b">{user.firstName}</td>
+              <td className="py-2 px-4 border-b">{user.middleName}</td>
+              <td className="py-2 px-4 border-b">{user.lastName}</td>
+              <td className="py-2 px-4 border-b">{user.email}</td>
+              <td className="py-2 px-4 border-b">{user.phone}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
-  )
-}
+  );
+};
 
-export default ShowUser
+export default ShowUser;
