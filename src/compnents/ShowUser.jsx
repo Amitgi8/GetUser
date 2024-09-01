@@ -3,7 +3,8 @@ import React from 'react';
 const ShowUser = ({ users }) => {
   return (
     <div className="p-6">
-      <h1 className='text-5xl font-bold mb-6'>Show User</h1>
+      <h1 className='text-5xl font-bold mb-6'>User list</h1>
+      {users.length > 0 ? (
       <table className="min-w-full bg-white border border-gray-300">
         <thead>
           <tr className="bg-gray-100 text-left">
@@ -28,6 +29,9 @@ const ShowUser = ({ users }) => {
           ))}
         </tbody>
       </table>
+      ) : (
+      <p className="text-center text-2xl font-semibold text-gray-600">No users found</p>
+      )}
     </div>
   );
 };

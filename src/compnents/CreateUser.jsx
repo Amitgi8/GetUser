@@ -20,7 +20,7 @@ const CreateUser = ({ addUser }) => {
   const show = (event) => {
     event.preventDefault();
     addUser(inputValue);
-    navigate('/ShowUser');
+    navigate('/');
   };
 
   return (
@@ -37,7 +37,7 @@ const CreateUser = ({ addUser }) => {
         </label>
         <label className="w-1/2 p-2">
           First Name:
-          <input name="firstName" value={inputValue.firstName} onChange={handleChange} placeholder='First Name' className="border w-full p-1" />
+          <input name="firstName" value={inputValue.firstName} onChange={handleChange} placeholder='First Name' className="border w-full p-1 " />
         </label>
         <label className="w-1/2 p-2">
           Middle Name:
